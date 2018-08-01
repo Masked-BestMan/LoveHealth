@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_article"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="23sp"/>
+    <TextView
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:lineSpacingExtra="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/title_view"/>
+
+    <Button
+        android:id="@+id/ensure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/content_view"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/about_article_ensure_button" />
+    <Button
+        android:id="@+id/copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/content_view"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:text="@string/about_article_copy_button"/>
+</RelativeLayout>

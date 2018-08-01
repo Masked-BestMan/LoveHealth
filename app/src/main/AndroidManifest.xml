@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zbm.lovehealth">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".LoveHealthApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme_launcher">
+
+        <meta-data android:name="com.baidu.speech.APP_ID"
+            android:value="11301118" />
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="556HkGAvudarag6OhSCwpl7I" />
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="07bbe3045eae4cc5597c7dd1bfb4b820" />
+
+        <service
+            android:name="com.baidu.speech.VoiceRecognitionService"
+            android:exported="false" />
+
+        <activity android:name=".main.MainActivity"
+            android:theme="@style/AppTheme_day">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".knowledge.KnowledgeActivity"
+            android:theme="@style/AppTheme_day">
+
+        </activity>
+        <activity android:name=".detail.DetailActivity"
+            android:theme="@style/AppTheme_day">
+
+        </activity>
+        <activity android:name=".AboutArticleDialog"
+            android:theme="@style/dialog_style"/>
+
+        <activity android:name=".search.SearchActivity"
+            android:theme="@style/AppTheme_day"/>
+        <activity android:name=".recognize.RecognizeActivity"
+            android:theme="@style/AppTheme_day"/>
+    </application>
+
+</manifest>

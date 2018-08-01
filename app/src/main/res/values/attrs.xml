@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="recordView">
+        <attr name="middleLineColor" format="reference|integer"/>
+    </declare-styleable>
+    <attr name="colorText" format="reference|color"/>
+    <attr name="colorTextBackground" format="reference|color"/>
+</resources>

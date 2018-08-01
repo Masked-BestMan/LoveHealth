@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/empty_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/network_setting"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/network_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/list_empty_view_button_title"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

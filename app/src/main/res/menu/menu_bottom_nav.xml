@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_nav_home"
+        android:enabled="true"
+        android:icon="@drawable/menu_bottom_nav_home_item"
+        android:title="@string/home_bottom_nav_name"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/bottom_nav_user"
+        android:enabled="true"
+        android:icon="@drawable/menu_bottom_nav_user_item"
+        android:title="@string/my_bottom_nav_name"
+        app:showAsAction="ifRoom"/>
+</menu>

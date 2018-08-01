@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:paddingBottom="8dp"
+    android:background="?attr/colorTextBackground"
+    xmlns:tool="http://schemas.android.com/tools">
+    <ImageView
+        android:id="@+id/knowledge_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        tool:ignore="ContentDescription" />
+    <TextView
+        android:id="@+id/knowledge_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/knowledge_item_image"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textColor="?attr/colorText"
+        tool:text="这是主标题官方的公司公开课更宽广快赶快更宽广看过看过快赶快高考公共课个"/>
+    <TextView
+        android:id="@+id/knowledge_item_s_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/knowledge_item_title"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:layout_marginTop="6dp"
+        android:textSize="14sp"
+        tool:text="这是副标题"/>
+</RelativeLayout>

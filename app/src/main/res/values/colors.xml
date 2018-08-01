@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="text_full_white">#ffffff</color>
+    <color name="text_alpha_white">#aaffffff</color>
+    <color name="theme_color_deep_day">#6495ED</color>
+    <color name="theme_color_simple_day_background">#F5F5F5</color>
+    <color name="theme_color_simple_day">#B0B0B0</color>
+    <color name="theme_color_deep_night">#262626</color>
+    <color name="theme_color_simple_night">#404040</color>
+    <color name="text_color_deep_gray">#5B5B5B</color>
+    <color name="RoundFillColor">#45C3E5</color>
+</resources>
