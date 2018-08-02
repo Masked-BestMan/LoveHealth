@@ -23,7 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zbm.lovehealth.AboutArticleDialog;
+import com.zbm.lovehealth.widget.AboutArticleDialog;
 import com.zbm.lovehealth.AbstractDataAgent;
 import com.zbm.lovehealth.AbstractDataBean;
 import com.zbm.lovehealth.IDataRequestFeedback;

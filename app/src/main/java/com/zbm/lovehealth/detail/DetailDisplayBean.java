@@ -3,9 +3,9 @@ package com.zbm.lovehealth.detail;
 import com.zbm.lovehealth.AbstractDataBean;
 
 public class DetailDisplayBean extends AbstractDataBean {
-    private String categoryName,mediaName,time,content,img,keyWords,wapUrl;
+    private String id,categoryName,mediaName,time,content,img,keyWords,wapUrl;
     public DetailDisplayBean(String id,String categoryName,String mediaName,String time,String content,String img,String keyWords,String wapUrl) {
-        super(id);
+        this.id=id;
         this.categoryName=categoryName;
         this.mediaName=mediaName;
         this.time=time;
@@ -13,6 +13,14 @@ public class DetailDisplayBean extends AbstractDataBean {
         this.img=img;
         this.keyWords=keyWords;
         this.wapUrl=wapUrl;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMediaName() {

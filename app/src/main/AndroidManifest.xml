@@ -46,7 +46,7 @@
             android:theme="@style/AppTheme_day">
 
         </activity>
-        <activity android:name=".AboutArticleDialog"
+        <activity android:name=".widget.AboutArticleDialog"
             android:theme="@style/dialog_style"/>
 
         <activity android:name=".search.SearchActivity"

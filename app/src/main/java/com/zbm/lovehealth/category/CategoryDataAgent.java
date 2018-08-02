@@ -8,7 +8,6 @@ import com.zbm.lovehealth.AbstractDataBean;
 import com.zbm.lovehealth.utils.CacheUtil;
 import com.zbm.lovehealth.utils.HttpUtil;
 import com.zbm.lovehealth.IDataRequestFeedback;
-import com.zbm.lovehealth.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -92,7 +91,7 @@ public class CategoryDataAgent extends AbstractDataAgent {
                 JSONObject jsonObject=list.getJSONObject(i);
                 String id= jsonObject.getString("id");
                 String name=jsonObject.getString("name");
-                beans.add(new CategoryListBean(id,name, R.drawable.temple));
+                //beans.add(new CategoryListBean(id,name, R.drawable.temple));
             }
         } catch (JSONException e) {
             e.printStackTrace();

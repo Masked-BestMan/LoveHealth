@@ -13,7 +13,7 @@ import retrofit2.http.QueryMap;
 
 public interface ApiService {
     @GET("96-108")
-    Flowable<List<CategoryListBean>>  getCategories(@QueryMap Map<String,String> params);
+    Flowable<CategoryListBean>  getCategories(@QueryMap Map<String,String> params);
 
     @GET("96-109")
     Flowable<List<KnowledgeListBean>> getKnowledge(@QueryMap Map<String,String> params);

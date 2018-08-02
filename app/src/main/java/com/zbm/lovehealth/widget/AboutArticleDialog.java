@@ -1,4 +1,4 @@
-package com.zbm.lovehealth;
+package com.zbm.lovehealth.widget;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.zbm.lovehealth.R;
 
 public class AboutArticleDialog extends AppCompatActivity {
     @Override

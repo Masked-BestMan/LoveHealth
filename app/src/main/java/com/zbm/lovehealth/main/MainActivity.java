@@ -12,7 +12,8 @@ import com.zbm.lovehealth.BaseActivity;
 import com.zbm.lovehealth.R;
 import com.zbm.lovehealth.ThemeMessageEvent;
 import com.zbm.lovehealth.UserFragment;
-import com.zbm.lovehealth.category.HomeFragment;
+import com.zbm.lovehealth.category.CategoryPresenter;
+import com.zbm.lovehealth.category.CategoryFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -65,7 +66,8 @@ public class MainActivity extends BaseActivity {
             bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.theme_color_deep_night));
         }
         List<Fragment> list = new ArrayList<>();
-        list.add(new HomeFragment());
+
+        list.add(new CategoryFragment());
         list.add(new UserFragment());
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), list);
         viewPager.setAdapter(adapter);

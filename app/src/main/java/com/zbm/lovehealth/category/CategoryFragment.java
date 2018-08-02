@@ -3,7 +3,6 @@ package com.zbm.lovehealth.category;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
@@ -20,9 +19,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.zbm.lovehealth.AbstractDataAgent;
-import com.zbm.lovehealth.AbstractDataBean;
-import com.zbm.lovehealth.IDataRequestFeedback;
 import com.zbm.lovehealth.utils.MyUtil;
 import com.zbm.lovehealth.R;
 import com.zbm.lovehealth.ThemeMessageEvent;
@@ -35,21 +31,21 @@ import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class HomeFragment extends Fragment implements CategoryContract.View {
+public class CategoryFragment extends Fragment implements CategoryContract.View {
 
     private boolean isNightMode;
     private Toolbar toolbar;
     private ImageView publicityBoard;
     private RecyclerView categoryList;
     private CategoryContract.Presenter mPresenter;
-    private List<CategoryListBean> list;
+    private List<CategoryListBean.ShowapiResBodyBean.ListBean> list;
     private CategoryListAdapter categoryListAdapter;
     private CollapsingToolbarLayout collapsingToolbarLayout;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new CategoryPresenter(this);
+        mPresenter=new CategoryPresenter(this);
     }
 
     @Nullable
@@ -105,7 +101,7 @@ public class HomeFragment extends Fragment implements CategoryContract.View {
         categoryList.setAdapter(categoryListAdapter);
         categoryListAdapter.setOnItemClickListener(new CategoryListAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(CategoryListBean bean, int position) {
+            public void onItemClick(CategoryListBean.ShowapiResBodyBean.ListBean bean, int position) {
                 Intent intent = new Intent(getActivity(), KnowledgeActivity.class);
                 intent.putExtra("tid", bean.getId());
                 intent.putExtra("name", bean.getName());
@@ -116,12 +112,6 @@ public class HomeFragment extends Fragment implements CategoryContract.View {
 
     }
 
-    //    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        if (categoryDataAgent!=null)
-//            categoryDataAgent.stopDataRequest();
-//    }
     @Override
     public void onResume() {
         super.onResume();
@@ -204,11 +194,9 @@ public class HomeFragment extends Fragment implements CategoryContract.View {
 //    }
 
     @Override
-    public void showCategoryList(List<CategoryListBean> beans) {
+    public void showCategoryList(List<CategoryListBean.ShowapiResBodyBean.ListBean> beans) {
         list.clear();
-        for (AbstractDataBean categoryListBean : beans) {
-            list.add((CategoryListBean) categoryListBean);
-        }
+        list.addAll(beans);
         categoryListAdapter.notifyDataSetChanged(true);
     }
 
@@ -222,8 +210,4 @@ public class HomeFragment extends Fragment implements CategoryContract.View {
         categoryListAdapter.notifyDataSetChanged(true);
     }
 
-    @Override
-    public void setPresenter(CategoryContract.Presenter presenter) {
-        mPresenter = presenter;
-    }
 }

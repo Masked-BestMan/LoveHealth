@@ -20,12 +20,13 @@ public class CategoryListAdapter extends EmptyViewAdapter {
     private final static int ITEM_CONTENT=0;
 
     private Context context;
-    private List<CategoryListBean> data;
+    private List<CategoryListBean.ShowapiResBodyBean.ListBean> data;
     private OnItemClickListener onItemClickListener;
 
-    public CategoryListAdapter(Context context, List<CategoryListBean> data) {
+    CategoryListAdapter(Context context, List<CategoryListBean.ShowapiResBodyBean.ListBean> data) {
+        this.data=data;
         this.context = context;
-        this.data = data;
+
     }
 
 
@@ -44,8 +45,8 @@ public class CategoryListAdapter extends EmptyViewAdapter {
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         if (data.size()>0) {
-            final CategoryListBean bean = data.get(position);
-            ((ContentHolder) holder).imageView.setImageDrawable(context.getResources().getDrawable(bean.getImage()));
+            CategoryListBean.ShowapiResBodyBean.ListBean bean=data.get(position);
+            ((ContentHolder) holder).imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.temple));
             ((ContentHolder) holder).textView.setText(bean.getName());
             if (onItemClickListener != null)
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +95,7 @@ public class CategoryListAdapter extends EmptyViewAdapter {
     }
 
     public interface OnItemClickListener {
-        void onItemClick(CategoryListBean bean, int position);
+        void onItemClick(CategoryListBean.ShowapiResBodyBean.ListBean bean, int position);
     }
 
     private static class ContentHolder extends RecyclerView.ViewHolder {
