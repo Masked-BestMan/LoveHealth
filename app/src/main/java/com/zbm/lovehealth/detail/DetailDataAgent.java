@@ -24,7 +24,7 @@ public class DetailDataAgent extends AbstractDataAgent {
     @Override
     public void requestData(final Map<String, String> params) {
         if (isNetworkAvailable(context)) {
-            HttpUtil.getHttpUtil().retrieveDataFromServer("http://route.showapi.com/90-88", params, new HttpUtil.OnReceiveDataListener() {
+            HttpUtil.getHttpUtil().retrieveDataFromServer("http://route.showapi.com/96-36", params, new HttpUtil.OnReceiveDataListener() {
                 @Override
                 public void onReceive(String response) {
                     List<AbstractDataBean> dataBeans = parseResult(response);
@@ -67,16 +67,16 @@ public class DetailDataAgent extends AbstractDataAgent {
             JSONObject item = body.getJSONObject("item");
             String img = item.getString("img");
             String categoryName = item.getString("tname");
-            String time = item.getString("ctime");
+            String time = item.getString("time");
             String content = item.getString("content");
             String id = item.getString("id");
             String mediaName;
-            if (item.has("media_name"))
-                mediaName = item.getString("media_name");
+            if (item.has("author"))
+                mediaName = item.getString("author");
             else
                 mediaName = "不详";
-            String wapUrl=item.getString("wapurl");
-            String keyWords=item.getString("keywords");
+            String wapUrl="";
+            String keyWords="无";
             if (content.equals("")&&item.has("images")) {
                 List<String> imagesList=new ArrayList<>();
                 JSONArray array=item.getJSONArray("images");

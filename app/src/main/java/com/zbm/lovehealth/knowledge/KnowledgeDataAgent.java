@@ -26,7 +26,7 @@ public class KnowledgeDataAgent extends AbstractDataAgent {
     @Override
     public void requestData(final Map<String, String> params) {
         if (isNetworkAvailable(context)) {
-            HttpUtil.getHttpUtil().retrieveDataFromServer("http://route.showapi.com/90-87", params, new HttpUtil.OnReceiveDataListener() {
+            HttpUtil.getHttpUtil().retrieveDataFromServer("http://route.showapi.com/96-109", params, new HttpUtil.OnReceiveDataListener() {
                 @Override
                 public void onReceive(String response) {
                     if (checkResult(response)) {
@@ -93,12 +93,10 @@ public class KnowledgeDataAgent extends AbstractDataAgent {
                 JSONObject jsonObject = list.getJSONObject(i);
                 String id = jsonObject.getString("id");
                 String title = jsonObject.getString("title");
-                String sTitle;
-                if (jsonObject.has("stitle"))
-                    sTitle = jsonObject.getString("stitle");
-                else
-                    sTitle = jsonObject.getString("keywords");
-                String img = jsonObject.getString("img");
+                String sTitle = jsonObject.getString("time");
+                String img="";
+                if (jsonObject.has("img"))
+                    img = jsonObject.getString("img");
                 beans.add(new KnowledgeListBean(id, title, sTitle, img));
             }
         } catch (JSONException e) {
